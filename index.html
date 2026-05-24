@@ -7,7 +7,28 @@
   <title>MiBiKe</title>
   <link rel="stylesheet" href="src/styles/main.scss" />
   <link rel="icon" href="src/images/favicon.png" />
-  <script src="src/scripts/main.js" defer></script>
+  <script>
+    'use strict';
+
+    const menu = document.getElementById('menu');
+    const menuOpen = document.getElementById('menu-open');
+    const menuClose = document.getElementById('menu-close');
+    const menuLinks = document.querySelectorAll('.menu__link');
+
+    menuOpen.addEventListener('click', () => {
+      menu.classList.add('menu--open');
+    });
+
+    menuClose.addEventListener('click', () => {
+      menu.classList.remove('menu--open');
+    });
+
+    menuLinks.forEach((link) => {
+      link.addEventListener('click', () => {
+        menu.classList.remove('menu--open');
+      });
+    });
+  </script>
 </head>
 
 <body class="page">
@@ -150,7 +171,7 @@
               <a href="#home" class="detail__photo detail__photo--wide img-hover">
                 <img class="detail__photo-img" src="src/images/detail-1-1.webp" alt="Detail 1" />
               </a>
-              <a href="#home" class="detail__photo detail__photo--square  img-hover">
+              <a href="#home" class="detail__photo detail__photo--square img-hover">
                 <img class="detail__photo-img" src="src/images/detail-1-2.webp" alt="Detail 1" />
               </a>
             </div>
@@ -164,10 +185,10 @@
 
           <article class="detail">
             <div class="detail__photos">
-              <a href="#home" class="detail__photo detail__photo--wide  img-hover">
+              <a href="#home" class="detail__photo detail__photo--wide img-hover">
                 <img class="detail__photo-img" src="src/images/detail-2-1.webp" alt="Detail 2" />
               </a>
-              <a href="#home" class="detail__photo detail__photo--square  img-hover">
+              <a href="#home" class="detail__photo detail__photo--square img-hover">
                 <img class="detail__photo-img" src="src/images/detail-2-2.webp" alt="Detail 2" />
               </a>
             </div>
@@ -209,7 +230,8 @@
           <form action="#" onsubmit="this.reset(); return false;" class="form contacts__form">
             <input class="form__input" type="text" name="name" placeholder="John Smith" required />
             <input class="form__input" type="email" name="email" placeholder="name@example.com" required />
-            <textarea class="form__input form__input--message" name="message" placeholder="I'd like to ask about..." required></textarea>
+            <textarea class="form__input form__input--message" name="message" placeholder="I'd like to ask about..."
+              required></textarea>
             <button class="button form__button" type="submit">
               Send
             </button>
@@ -252,5 +274,4 @@
     <img class="footer__img" src="src/images/footer.webp" alt="footer" />
   </footer>
 </body>
-
 </html>
