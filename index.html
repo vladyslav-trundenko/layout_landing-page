@@ -7,28 +7,6 @@
   <title>MiBiKe</title>
   <link rel="stylesheet" href="src/styles/main.scss" />
   <link rel="icon" href="src/images/favicon.png" />
-  <script>
-    'use strict';
-
-    const menu = document.getElementById('menu');
-    const menuOpen = document.getElementById('menu-open');
-    const menuClose = document.getElementById('menu-close');
-    const menuLinks = document.querySelectorAll('.menu__link');
-
-    menuOpen.addEventListener('click', () => {
-      menu.classList.add('menu--open');
-    });
-
-    menuClose.addEventListener('click', () => {
-      menu.classList.remove('menu--open');
-    });
-
-    menuLinks.forEach((link) => {
-      link.addEventListener('click', () => {
-        menu.classList.remove('menu--open');
-      });
-    });
-  </script>
 </head>
 
 <body class="page">
@@ -273,5 +251,29 @@
   <footer class="footer">
     <img class="footer__img" src="src/images/footer.webp" alt="footer" />
   </footer>
+
+  <script>
+    'use strict';
+
+    const menu = document.getElementById('menu');
+    const menuOpen = document.getElementById('menu-open');
+    const menuClose = document.getElementById('menu-close');
+    const menuLinks = document.querySelectorAll('.menu__link');
+
+    menuOpen.addEventListener('click', () => {
+      menu.classList.add('menu--open');
+    });
+
+    menuClose.addEventListener('click', () => {
+      menu.classList.remove('menu--open');
+    });
+
+    menuLinks.forEach((link) => {
+      link.addEventListener('click', () => {
+        menu.classList.remove('menu--open');
+      });
+    });
+  </script>
 </body>
+
 </html>
