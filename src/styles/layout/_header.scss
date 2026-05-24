@@ -3,11 +3,9 @@
 .header {
   background-image: url(../images/header-bg.webp);
   background-size: cover;
-  background-position: 90% 50%;
-  padding-top: 26px;
-
+  background-position: 85% center;
+  
   @include on-tablet {
-    padding-top: 36px;
     background-position: 50% 50%;
   }
 
@@ -17,9 +15,11 @@
     justify-content: space-between;
     height: 100vh;
     padding-bottom: 85px;
+    padding-top: 26px;
 
     @include on-tablet {
       padding-bottom: 130px;
+      padding-top: 36px;
     }
 
     @include on-desktop {
