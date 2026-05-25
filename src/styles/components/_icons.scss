@@ -12,21 +12,46 @@
     height: 32px;
   }
 
-  &--phone {
-    background-image: url(../images/icon-phone-call.svg);
+  &__hover-phone {
+    display: none;
 
-    @include transition(opacity);
-    
-    &:hover {
-      opacity: 0.6;
+    @include on-tablet {
+      position: absolute;
+      display: block;
+      top: 50%;
+      transform: translateY(-50%);
+      right: calc(100% + 20px);
+      white-space: nowrap;
+      opacity: 0;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 16px;
+      letter-spacing: 2px;
+
+      @include transition(opacity);
     }
   }
+
+
+  &--phone {
+    background-image: url(../images/icon-phone-call.svg);
+    position: relative;
+
+    @include transition(opacity);
+
+    &:hover {
+      .icon__hover-phone {
+        opacity: 1;
+      }
+    }
+  }
+
 
   &--menu {
     background-image: url(../images/icon-burger-menu.svg);
 
     @include transition(opacity);
-    
+
     &:hover {
       opacity: 0.6;
     }
